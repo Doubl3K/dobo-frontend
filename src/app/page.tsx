@@ -8,6 +8,7 @@ export default function Home() {
 				<Link href="/dashboard">Dashboard </Link>
 				<Link href="/doboview"> DoboView </Link>
 				<Link href="/mqttTesting"> Mqtt </Link>
+				<Link href="/chartTesting"> Chart </Link>
 			</div>
 		</main>
 	);

@@ -5,7 +5,7 @@ const WebcamComponent = () => <Webcam />;
 export default function DoboView() {
 	return (
 		<div>
-			<h1>Kevin ich sehe dich</h1>
+			<h1>Kevin sieht euch alle :*	</h1>
 			<WebcamComponent />
 		</div>
 	);

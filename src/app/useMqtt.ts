@@ -45,6 +45,9 @@ function useMqtt({
 		});
 
 		client?.on("connect", () => {
+			console.log("Connected to MQTT broker");
+			console.log("Client: " + client);
+
 			if (onConnectedHandler) onConnectedHandler(client);
 		});
 
@@ -56,7 +59,6 @@ function useMqtt({
 				client.end();
 			}
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 }
 

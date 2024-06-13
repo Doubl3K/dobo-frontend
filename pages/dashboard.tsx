@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import CardLineChart from "../src/components/Chart";
 import "../styles/globals.css";
 
 export default function Dashboard() {
-	const [temperature, setTemperature] = useState(null);
+	const [temperature, setTemperature] = useState<number | null>(null);
 
 	useEffect(() => {
 		const intervalId = setInterval(() => {
@@ -16,27 +17,27 @@ export default function Dashboard() {
 
 	return (
 		<>
-			<ul>
-				<li>Webcam anzeigen</li>
-				<li>Daten Temp und Feucht</li>
-				<li>Farbe von dem Würfel</li>
-			</ul>
-			<br />
 			<div className="tempWrapper">
-				<label htmlFor="temperature">Temperature: </label>
+				<label htmlFor="temperature">Current Temperature: </label>
 				{temperature !== null && <span id="temperature">{temperature}°C</span>}
 			</div>
 			<div className="wetWrapper">
-				<label htmlFor="humidity">Humidity: </label>
+				<label htmlFor="humidity">Current Humidity: </label>
 				{temperature !== null && (
 					<span id="humidity">{randomNumberForTesting()}%</span>
 				)}
 			</div>
 			<div className="cubeWrapper">
-				<label htmlFor="cubeColor">Cube Color: </label>
+				<label htmlFor="cubeColor">Current Cube Color: </label>
 				{temperature !== null && (
 					<span id="cubeColor">#{randomColorForTesting()}</span>
 				)}
+			</div>
+			<div className="temperatureChartWrapper">
+				<CardLineChart title="Temperature Development over time" id="1" />
+			</div>
+			<div className="humidityChartWrapper">
+				<CardLineChart title="Humuidity Development over time" id="2" />
 			</div>
 		</>
 	);
@@ -51,7 +52,7 @@ function randomColorForTesting() {
 	return hexColor.padStart(6, "0");
 }
 
-function changeCubeColorToHex(hexColor: string) {
+function changeCubeColorToHex(hexColor: string): void {
 	const cube = document.getElementById("cubeColor");
 	if (cube) {
 		cube.style.backgroundColor = `#${hexColor}`;
