@@ -82,12 +82,12 @@ client.on("connect", (event) => {
 
 	console.log("me amo es connected");
 
-	client.subscribe("presence", (err) => {
+	client.subscribe("FBS/LF8_Projekt/Zeit", (err) => {
 		console.log("Subscribed to FBS/LF8_Projekt/Zeit. Wating for message");
 	});
 });
 
-client.publish("presence", "Hello mqtt");
+// client.publish("presence", "Hello mqtt");
 
 client.on("error", (error) => {
 	console.log("Error: " + error);
