@@ -1,4 +1,3 @@
-"use-client";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import CardLineChart from "../src/components/Chart";
@@ -25,11 +24,12 @@ export default function Dashboard() {
 
 	return (
 		<>
+			<button onClick={connectMe}>Test</button>
 			<div className="gridWrapper">
 				<div className="cardGrid">
 					<div className="tempWrapper card">
 						<label htmlFor="temperature">Current Temperature: </label>
-
+						mqtt
 						<GaugeChart
 							id="gauge-chart1"
 							percent={temperature / 100}
@@ -92,13 +92,18 @@ function changeCubeColorToHex(hexColor: string): void {
 }
 
 function connectMe() {
+	console.log("connecting");
+
 	const mqtt = require("mqtt");
-	const client = mqtt.connect("mqtt://test.mosquitto.org:8081");
+	const client = mqtt.connect("ws://test.mosquitto.org:8080");
 
 	client.on("connect", function () {
-		client.subscribe("raspi/test/luefter", function (err: any) {
+		console.log("Connection established");
+
+		client.subscribe("FBS/LF8_Projekt/JSON", function (err: any) {
 			if (!err) {
-				client.publish("raspi/test/luefter", "Hello mqtt");
+				// client.publish("raspi/test/luefter", "Hello mqtt");
+				console.log("Subscribed");
 			}
 		});
 	});
@@ -107,6 +112,6 @@ function connectMe() {
 		// message is Buffer
 		console.log(message.toString());
 		let messageRecieved = message.toString();
-		document.getElementById("data")!.innerHTML = message.toString();
+		// document.getElementById("data")!.innerHTML = message.toString();
 	});
 }

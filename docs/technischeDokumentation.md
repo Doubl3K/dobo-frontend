@@ -1,4 +1,4 @@
-# Benutzer-Dokumentation Dobo Daten Visualisierung
+# Technische Dokumentation Dobo Daten Visualisierung
 
 ## Zweck: Laufender Messebetrieb
 
@@ -6,7 +6,7 @@ Dieses System wurde entwickelt, um während eines Messebetriebs Echtzeit-Daten w
 
 ## Zielgruppe
 
-Dieses System ist für firmen-interne Vertriebsmitarbeiter sowie Interessenten konzipiert, die ein geringes technisches Spezialwissen besitzen. Dazu zählen Einkäufer anderer Konzerne oder Firmen, die sich einen Überblick über die Echtzeit-Daten ihres Systems verschaffen möchten, ohne sich mit den technischen Details auseinandersetzen zu müssen.
+Dieses System ist für Mitarbeiter konzipiert, die ein geringes hohes Spezialwissen besitzen. Dazu zählen Fachentwickler und Mitarbeiter mit tieferem technischen Verständniss, die sich einen Überblick über die Echtzeit-Daten ihres Systems verschaffen möchten, ohne sich mit den tieferen Details auseinandersetzen zu müssen um das System einzurichten.
 
 Diese Dokumentation soll Ihnen helfen, das System erfolgreich zu bedienen und mögliche Probleme schnell zu beheben. Bei weiteren Fragen oder Problemen wenden Sie sich bitte an den technischen Support Ihrer IT-Abteilung oder via DM an [https://github.com/Doubl3K].
 
