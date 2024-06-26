@@ -31,11 +31,12 @@ export default function Dashboard() {
 
 	return (
 		<>
+			<button onClick={connectMe}>Test</button>
 			<div className="gridWrapper">
 				<div className="cardGrid">
 					<div className="tempWrapper card">
 						<label htmlFor="temperature">Current Temperature: </label>
-
+						mqtt
 						<GaugeChart
 							id="gauge-chart1"
 							percent={temperature / 100}
