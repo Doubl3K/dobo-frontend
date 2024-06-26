@@ -1,4 +1,3 @@
-"use-client";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import CardLineChart from "../src/components/Chart";
@@ -9,6 +8,10 @@ export default function Dashboard() {
 	const [temperature, setTemperature] = useState<number>(0);
 	const [humidity, setHumidity] = useState<number>(0);
 	const [cubeColor, setCubeColor] = useState<string>("000000");
+	const [mqttDataRecieved, setMqttDataRecieved] = useState<string>(
+		"No data recieved yet"
+	);
+	const [mqttData, setMqttData] = useState<string[]>([]); // New state variable
 
 	useEffect(() => {
 		const intervalId = setInterval(() => {
@@ -17,6 +20,9 @@ export default function Dashboard() {
 			const newColor = randomColorForTesting();
 			setCubeColor(newColor);
 			changeCubeColorToHex(newColor);
+			setMqttDataRecieved(randomMqttData());
+			const randomData = randomMqttData();
+			connectMe(setMqttData);
 		}, 1000);
 
 		// cleanup function to clear the interval when the component unmounts
@@ -61,13 +67,33 @@ export default function Dashboard() {
 							</div>
 						</span>
 					</div>
+					<div className="temperatureChartWrapper card">
+						<CardLineChart title="Temperature Development over time" id="1" />
+						<CardLineChart title="Humuidity Development over time" id="2" />
+					</div>
+					<div className="dataRecieved card">
+						<label htmlFor="data">Cost table</label>
+						<p id="data">No data recieved yet</p>
+						<button
+							onClick={() => connectMe(setMqttData)}
+							className="connectButton">
+							Test Call
+						</button>
+					</div>
+					<div className="dateRecievedHistory card">
+						<label htmlFor="mqttData">MQTT data: </label>
+						<span className="dataHistory mqtt">
+							{mqttData.length === 0
+								? "No Data received yet"
+								: mqttData.join(", ")}
+						</span>
+						<button
+							onClick={() => connectMe(setMqttData)}
+							className="connectButton">
+							Connect
+						</button>
+					</div>
 				</div>
-			</div>
-			<div className="temperatureChartWrapper">
-				<CardLineChart title="Temperature Development over time" id="1" />
-			</div>
-			<div className="humidityChartWrapper">
-				<CardLineChart title="Humuidity Development over time" id="2" />
 			</div>
 		</>
 	);
@@ -91,22 +117,25 @@ function changeCubeColorToHex(hexColor: string): void {
 	}
 }
 
-function connectMe() {
-	const mqtt = require("mqtt");
-	const client = mqtt.connect("mqtt://test.mosquitto.org:8081");
+function randomMqttData() {
+	let data = "MQTT: ";
+	let random = Math.floor(Math.random() * 100);
+	return data + random;
+}
 
-	client.on("connect", function () {
-		client.subscribe("raspi/test/luefter", function (err: any) {
-			if (!err) {
-				client.publish("raspi/test/luefter", "Hello mqtt");
-			}
-		});
-	});
+function connectMe(
+	setMqttData: React.Dispatch<React.SetStateAction<string[]>>
+) {
+	document.getElementsByClassName("dataHistory")[0]!.innerHTML =
+		"Connecting To MQTT Server...";
 
-	client.on("message", function (topic: string, message: string) {
-		// message is Buffer
-		console.log(message.toString());
-		let messageRecieved = message.toString();
-		document.getElementById("data")!.innerHTML = message.toString();
-	});
+	setTimeout(() => {
+		let test = document.createElement("p");
+		const randomData = randomMqttData();
+		setMqttData((prevData) => [...prevData, randomData]);
+		const dataHistoryElement =
+			document.getElementsByClassName("dataHistory")[0];
+		test.textContent = randomData;
+		dataHistoryElement.appendChild(test);
+	}, 2000); // 2000 milliseconds = 2 seconds
 }
