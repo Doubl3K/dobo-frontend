@@ -6,7 +6,7 @@ Dieses System wurde entwickelt, um während eines Messebetriebs Echtzeit-Daten w
 
 ## Zielgruppe
 
-Dieses System ist für Mitarbeiter konzipiert, die ein geringes hohes Spezialwissen besitzen. Dazu zählen Fachentwickler und Mitarbeiter mit tieferem technischen Verständniss, die sich einen Überblick über die Echtzeit-Daten ihres Systems verschaffen möchten, ohne sich mit den tieferen Details auseinandersetzen zu müssen um das System einzurichten.
+Dieses System ist für Mitarbeiter konzipiert, die ein geringes Spezialwissen besitzen. Dazu zählen Fachentwickler und Mitarbeiter mit tieferem technischen Verständnis, die sich einen Überblick über die Echtzeit-Daten ihres Systems verschaffen möchten, ohne sich mit den tieferen Details auseinandersetzen zu müssen um das System einzurichten.
 
 Diese Dokumentation soll Ihnen helfen, das System erfolgreich zu bedienen und mögliche Probleme schnell zu beheben. Bei weiteren Fragen oder Problemen wenden Sie sich bitte an den technischen Support Ihrer IT-Abteilung oder via DM an [https://github.com/Doubl3K].
 
@@ -37,7 +37,7 @@ Klonen sie sich die Projekte auf ein Lokales Gerät:
   [BILD]
 - Stellen sie sicher das die Workstation mit dem Netzwerk verbunden ist.
 - Starten sie die Date opcua_client.py um die Messdaten des Rasperry Pi zu empfangen.
-- Führen sie die positioning.py Datei aus um die Steuerung der Dobots zu starten
+- Führen sie die positioning.py Datei aus um die Steuerung der Dobots zu starten.
   - Diese führt eine Homing Kalibrierung aus um die Korrekte Steuerung des Dobot zu gewärleisten.
 
 #### Kostenabfrage Workstation 2
@@ -55,7 +55,7 @@ Klonen sie sich die Projekte auf ein Lokales Gerät:
 
 ##### Lokal
 
-- Um das User frontend lokal auf einem Rechner zu starten müssen sie erst Node.js und NPM installieren
+- Um das User frontend lokal auf einem Rechner zu starten müssen sie erst Node.js und NPM installieren.
   - https://nodejs.org/en
 - Öffnen sie ein Terminal ihrer Wahl und navigieren sie zu der Directory in der sie den Frontend Ordner hinterlegt haben.
 - Installieren sie die benötigten packages via dem command npm i.
@@ -63,12 +63,12 @@ Klonen sie sich die Projekte auf ein Lokales Gerät:
   [BILD]
 - Öffnen sie die localhost Adresse in ihrem preffererierten Browser.
   [BILD]
-- Navigieren sie zum Dashboard um aktuelle Daten zu Empfangen
+- Navigieren sie zum Dashboard um aktuelle Daten zu Empfangen.
 
 ##### Server
 
-- Kopieren sie die Dateien aus dem Build Ordner in die Directory ihres Webservers
-- Navigieren sie zu Dashobard um aktuelle Daten zu Empfangen
+- Kopieren sie die Dateien aus dem Build Ordner in die Directory ihres Webservers.
+- Navigieren sie zu Dashobard um aktuelle Daten zu Empfangen.
 
 ## Funktion
 
@@ -99,12 +99,12 @@ API-Zugriff: Stellen Sie sicher, dass der API-Zugriff auf die aktuellen Stromkos
 - Sensorfehler am Raspberry Pi:
 
   - Symptom: Keine oder falsche Temperatur- und Luftfeuchtigkeitswerte.
-  - Lösung: Überprüfen Sie die Sensoranschlüsse und ersetzen Sie defekte Sensoren.
+  - Lösung: Überprüfen Sie die Sensoranschlüsse und ersetzen Sie dhohesefekte Sensoren.
 
 - Dobot-Roboterfehler:
 
   - Symptom: Der Roboter reagiert nicht auf Befehle.
-  - Lösung: - Überprüfen Sie die Verbindung des Roboter und versichern sie sich das der Roboter eingeschaltet ist
+  - Lösung: - Überprüfen Sie die Verbindung des Roboter und versichern sie sich das der Roboter eingeschaltet ist.
 
 - Datenbankverbindungsfehler:
 

@@ -2,8 +2,13 @@
 
 ## Zweck:
 
-Messebetrieb
 Dieses System dient dazu, während des Messebetriebs Echtzeit-Daten wie Temperatur und Luftfeuchtigkeit zu erfassen und diese Daten über verschiedene Geräte und Softwarekomponenten zu verarbeiten und anzuzeigen. Ziel ist es, diese Informationen benutzerfreundlich auf einer Weboberfläche zu präsentieren.
+
+## Zielgruppe
+
+Dieses System richtet sich an firmen-interne Vertriebsmitarbeiter sowie an Interessenten ohne technisches Spezialwissen, wie beispielsweise Einkäufer anderer Konzerne oder Firmen. Es wurde entwickelt, um diese Benutzer in die Lage zu versetzen, Echtzeit-Daten unkompliziert zu überwachen und zu verstehen.
+
+Diese Dokumentation soll Ihnen helfen, das System erfolgreich zu bedienen und mögliche Probleme schnell zu beheben. Bei weiteren Fragen oder Problemen wenden Sie sich bitte an den technischen Support Ihrer IT-Abteilung.
 
 ## Bedienung des Systems
 
@@ -31,9 +36,3 @@ Dieses System dient dazu, während des Messebetriebs Echtzeit-Daten wie Temperat
 - Ich bekomme innerhalb einer Minute immernoch keine Daten?
   - Öffnen sie die Konsole mit F12. Sollten dort etwas rotes zu sehen sein melden sie sich bitte bei ihrem Administrator
     [BILD]
-
-## Zielgruppe
-
-Dieses System richtet sich an firmen-interne Vertriebsmitarbeiter sowie an Interessenten ohne technisches Spezialwissen, wie beispielsweise Einkäufer anderer Konzerne oder Firmen. Es wurde entwickelt, um diese Benutzer in die Lage zu versetzen, Echtzeit-Daten unkompliziert zu überwachen und zu verstehen.
-
-Diese Dokumentation soll Ihnen helfen, das System erfolgreich zu bedienen und mögliche Probleme schnell zu beheben. Bei weiteren Fragen oder Problemen wenden Sie sich bitte an den technischen Support Ihrer IT-Abteilung.

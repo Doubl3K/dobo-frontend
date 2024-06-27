@@ -138,5 +138,5 @@ function connectMe(
 			document.getElementsByClassName("dataHistory")[0];
 		test.textContent = randomData;
 		dataHistoryElement.appendChild(test);
-	}, 2000); // 2000 milliseconds = 2 seconds
+	}, 2000);
 }
