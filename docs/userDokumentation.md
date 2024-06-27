@@ -36,3 +36,5 @@ Diese Dokumentation soll Ihnen helfen, das System erfolgreich zu bedienen und m√
 - Ich bekomme innerhalb einer Minute immernoch keine Daten?
   - √ñffnen sie die Konsole mit F12. Sollten dort etwas rotes zu sehen sein melden sie sich bitte bei ihrem Administrator
     [BILD]
+- Funktionieren die Server und CLient Verbindungen nicht?
+  - Stellen sie sicher das sie sich im selben Netzwerk befinden und die IP-Adresse aktualisieren

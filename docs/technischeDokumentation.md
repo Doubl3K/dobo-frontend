@@ -35,21 +35,22 @@ Klonen sie sich die Projekte auf ein Lokales Gerät:
   [BILD]
 - Verbinden Sie den Dobot mit dem Rechner, der die Steuerung übernimmt.
   [BILD]
+- Schließen sie die Kamera an den PC an und richten sie diese passend zum Würfel aus.
 - Stellen sie sicher das die Workstation mit dem Netzwerk verbunden ist.
-- Starten sie die Date opcua_client.py um die Messdaten des Rasperry Pi zu empfangen.
-- Führen sie die positioning.py Datei aus um die Steuerung der Dobots zu starten.
-  - Diese führt eine Homing Kalibrierung aus um die Korrekte Steuerung des Dobot zu gewärleisten.
-
-#### Kostenabfrage Workstation 2
-
-- Stellen sie sicher, dass ihr Rechner eine stabaile Internetverbindung besitzt.
-- Kommt noch wenn sich der Jobsti was überlegt hat-..
+- Warten sie als nächstes auf die Workstation 2. Es muss erst die tcp_server.py auf der Workstation 2 gestartet werden, bevor die opcua_tcp_client.py auf der Workstation 1 gestartet werden kann.
+  - Das ist wichtig da initial nur einmal die awattar_api angesprochen und als JSON weitergeleitet wird
+- Führen sie die positioning.py Datei in Absprache mit den anderen Workstation aus, sobald alle Verbindungen funktionieren.
+  - Diese führt eine Homing Kalibrierung aus um die Korrekte Steuerung des Dobot zu gewährleisten.
 
 #### Datenbankserver Workstation 2
 
 - Richten sie die MongoDB software auf dem Gerät ein
   - https://www.mongodb.com/docs/manual/installation/
-- Führen sie die Datei ... Hier warten wir auch auf den Jobsti
+- Die dump.zip im Projekt enthält die erforderlichen database Einstellung
+  - Nutzen sie hierzu die MongoDB Dokumentation
+- Stellen sie sicher, dass ihr Rechner eine stabile Internetverbindung besitzt.
+- Starten sie in Absprache mit Workstation 1, wie oben beschrieben, die tcp_server.py
+- Starten sie als nächstes in Absprache mit Workstation 3 die mqtt_publish.py. Diese darf erst nach starten des Frontends ausgeführt werden.
 
 #### Datenanzeige Workstation 3
 

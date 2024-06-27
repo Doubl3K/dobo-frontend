@@ -28,20 +28,21 @@
 
 ## Hürden
 
-- Blockierte Ports für sämtliche Verbindungen im schul Netz
+- Blockierte Ports für sämtliche Verbindungen im Schulnetzwerk
   - Hat ungefähr die hälfte der Bearbeitungszeit gekostet
 - Umfang des Projektes lässt wenig bis keine Zeit für Management
-- Erforderung von Kentnissen in zufällig zusammengewürfelten Teams
+- Erforderung von Kenntnissen in zufällig zusammengewürfelten Teams
 
 ## Eigene Bewertung
 
-Wir waren toll gib mir jetzt die 1 sonst muss ich euch holen kommen :)
+Wir waren toll gib mir jetzt die 1 sonst muss ich euch holen kommen :) ☜(ﾟヮﾟ ☜) Ich Sebastian approve Kevins Meinung :D
 
 ## Verbesserungsvorschläge / Kritik
 
-Die Tatsache das sämtliche benötigten Ports im internen Netz geblock sind währen kein Problem wenn dies vorher bekannt ist. Man könnte sich darauf einstellen und mit VM's arbeiten.
+Die Tatsache das sämtliche benötigten Ports im internen Netz geblockt sind wären kein Problem wenn dies vorher bekannt ist. Man könnte sich darauf einstellen und mit VM's arbeiten.
 
 - Miese Arbeitsumgebung
   - Rückenschmerzen durch Stühle
   - Keine externen Monitore
   - Nutzung von vorhandenen Systemen nicht möglich
+  - Generell wenig Platz um in der Gruppe zu arbeiten
