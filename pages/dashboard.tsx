@@ -1,8 +1,12 @@
+import mqtt from "mqtt";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import JsonMockup from "../docs/mockupData.json";
 import CardLineChart from "../src/components/Chart";
 import "../styles/globals.css";
+
 const GaugeChart = dynamic(() => import("react-gauge-chart"), { ssr: false });
+let client;
 
 export default function Dashboard() {
 	const [temperature, setTemperature] = useState<number>(0);
@@ -31,7 +35,7 @@ export default function Dashboard() {
 
 	return (
 		<>
-			<button onClick={connectMe}>Test</button>
+			<button onClick={sendTestData}>Test</button>
 			<div className="gridWrapper">
 				<div className="cardGrid">
 					<div className="tempWrapper card">
@@ -88,9 +92,7 @@ export default function Dashboard() {
 								? "No Data received yet"
 								: mqttData.join(", ")}
 						</span>
-						<button
-							onClick={() => connectMe(setMqttData)}
-							className="connectButton">
+						<button onClick={() => sendTestData()} className="connectButton">
 							Connect
 						</button>
 					</div>
@@ -140,3 +142,44 @@ function connectMe(
 		dataHistoryElement.appendChild(test);
 	}, 2000);
 }
+function sendTestData() {
+	let data: JSON = JsonMockup;
+	console.log(data.toString());
+
+	client.publish("jsonTest", JSON.stringify(data));
+	console.log(JsonMockup);
+}
+
+let official = "FBS/LF8_Projekt/JSON";
+let test = "jsonTest";
+
+function startMqttConnection() {
+	console.log("Starting MQTT Connection");
+
+	client = mqtt.connect("ws://test.mosquitto.org:8080");
+
+	client.on("connect", () => {
+		client.subscribe(test, (err) => {
+			if (!err) {
+				console.log(test);
+			}
+		});
+	});
+
+	client.on("message", (topic, message) => {
+		console.log("Data recieved");
+		handleJson(message);
+	});
+}
+
+function handleJson(data) {
+	let jsonData: JSON = JSON.parse(data);
+	getEnergieCosts(jsonData);
+	console.log(jsonData);
+}
+
+function getEnergieCosts(data: JSON) {
+	let costs = data[0];
+	console.log(costs);
+}
+startMqttConnection();
