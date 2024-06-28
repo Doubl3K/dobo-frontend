@@ -19,11 +19,11 @@ Diese Dokumentation soll Ihnen helfen, das System erfolgreich zu bedienen und m�
 
 - Der Dobot macht ein lautes konstantes Knacken?
   - Drücken sie den LockKnopf vom am Dobo um ihn von der Steuerung zu lösen um mögliche Schäden zu vermeiden.
-    [BILD]
+    ![dobot_lock_knopf.jpg](./assets/dobot_lock_knopf.jpg)
   - Trennen sie den Dobo vom Strom und informieren sie ihren Administrator.
 - Der Dobot bewegt sich nicht?
   - Überprüfen sie ob die Kabel mit dem Dobo richtig verbunden sind und das die Lampe am Dobo blau leuchtet.
-    [BILD]
+    ![dobot_lampe.jpg](./assets/dobot_lampe.jpg)
 - Ist die angegebene Seite nicht zu erreichen?
   - Überprüfen sie ob die URL richtig eingegeben wurde.
     [VOM ADMINISTRATOR ZU ERGÄNZEN]

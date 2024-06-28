@@ -22,19 +22,19 @@ Klonen sie sich die Projekte auf ein Lokales Gerät:
 #### Raspberry Pi:
 
 - Schließen Sie den Raspberry Pi an eine Stromversorgung an.
-  [BILD]
+  ![strom_versorgung.png](./assets/strom_versorgung.png)
 - Verbinden sie dann das Breadboard mit den Sensoren (Temperatur und Luftfeuchtigkeit) über den 40 Pin Connector mit dem Pi.
-  [BILD]
+  ![40_pin_connector.jpg](./assets/40_pin_connector.jpg)
 - Stellen Sie sicher, dass der Raspberry Pi mit dem Netzwerk verbunden ist.
-  [BILD]
+  ![netzwerk_verbunden.png](./assets/netzwerk_verbunden.png)
 - Führen sie die Datei opcua_server.py aus um die nötigen Daten auszulesen und zu Station 2 zu senden
 
 #### Dobot Roboter: Workstation 1
 
 - Schließen sie den Dobot an eine Stromversorgung an.
-  [BILD]
+  ![Dobot_strom.jpg](./assets/Dobot_strom.jpg)
 - Verbinden Sie den Dobot mit dem Rechner, der die Steuerung übernimmt.
-  [BILD]
+  ![Dobot_rechner.jpg](./assets/Dobot_rechner.jpg)
 - Schließen sie die Kamera an den PC an und richten sie diese passend zum Würfel aus.
 - Stellen sie sicher das die Workstation mit dem Netzwerk verbunden ist.
 - Warten sie als nächstes auf die Workstation 2. Es muss erst die tcp_server.py auf der Workstation 2 gestartet werden, bevor die opcua_tcp_client.py auf der Workstation 1 gestartet werden kann.

@@ -21,6 +21,7 @@
 
 - OPCUA Verbindung
 - Farbekennung
+- Raspberry Pi
 
 ### Tom Fröhlich
 
@@ -29,13 +30,14 @@
 ## Hürden
 
 - Blockierte Ports für sämtliche Verbindungen im Schulnetzwerk
-  - Hat ungefähr die hälfte der Bearbeitungszeit gekostet
+- Hat ungefähr die hälfte der Bearbeitungszeit gekostet
 - Umfang des Projektes lässt wenig bis keine Zeit für Management
 - Erforderung von Kenntnissen in zufällig zusammengewürfelten Teams
 
 ## Eigene Bewertung
 
-Wir waren toll gib mir jetzt die 1 sonst muss ich euch holen kommen :) ☜(ﾟヮﾟ ☜) Ich Sebastian approve Kevins Meinung :D
+Wir waren toll gib mir jetzt die 1 sonst muss ich euch holen kommen :) ☜(ﾟヮﾟ ☜) Ich Sebastian approve Kevins Meinung :D     
+Ich Ben finde das Sebastian und Kevin die 1 verdint haben ^_^
 
 ## Verbesserungsvorschläge / Kritik
 
@@ -43,6 +45,7 @@ Die Tatsache das sämtliche benötigten Ports im internen Netz geblockt sind wä
 
 - Miese Arbeitsumgebung
   - Rückenschmerzen durch Stühle
+  ![Rückenschmerzen](./assets/Rückenschmerzen.webp)
   - Keine externen Monitore
   - Nutzung von vorhandenen Systemen nicht möglich
   - Generell wenig Platz um in der Gruppe zu arbeiten
