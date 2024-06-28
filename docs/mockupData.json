@@ -3,7 +3,7 @@
 		{
 			"_id": { "$oid": "667a71f6e0886aacd10fabda" },
 			"current_date": 1719300598.5516734,
-			"humidity": 50.1
+			"humidity": 55.1
 		}
 	],
 	"Temperatur": [
@@ -17,7 +17,7 @@
 		{
 			"_id": { "$oid": "667a71f6e0886aacd10fabdc" },
 			"current_date": 1719300598.5516734,
-			"hex_code": "#ff8234"
+			"hex_code": "#34ffff"
 		}
 	],
 	"Energiekosten": [
