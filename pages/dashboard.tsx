@@ -91,43 +91,14 @@ export default function Dashboard() {
 	);
 }
 
-// function randomNumberForTesting() {
-// 	return Math.floor(Math.random() * 100);
-// }
-
-// function randomColorForTesting() {
-// 	const hexColor = Math.floor(Math.random() * 16777215).toString(16);
-// 	return hexColor.padStart(6, "0");
-// }
-
 function changeCubeColorToHex(hexColor: string): void {
 	const cubeFaces: HTMLCollectionOf<Element> =
 		document.getElementsByClassName("face");
 
-	// for (let i = 0; i < cubeFaces.length; i++) {
-	// 	cubeFaces[i].style.backgroundColor = `${hexColor}`;
-	// }
+	for (let i = 0; i < cubeFaces.length; i++) {
+		cubeFaces[i].style.backgroundColor = `${hexColor}`;
+	}
 }
-
-// function randomMqttData() {
-// 	let data = "MQTT: ";
-// 	let random = Math.floor(Math.random() * 100);
-// 	return data + random;
-// }
-
-// function connectMe(
-// 	setMqttData: React.Dispatch<React.SetStateAction<string[]>>
-// ) {
-// 	document.getElementsByClassName("dataHistory")[0]!.innerHTML =
-// 		"Connecting To MQTT Server...";
-
-// 	setTimeout(() => {
-// 		let test = document.createElement("p");
-// 		const randomData = randomMqttData();
-// 		setMqttData((prevData) => [...prevData, randomData]);
-// 		test.textContent = randomData;
-// 	}, 2000);
-// }
 
 function sendTestData() {
 	let data: JSON = JsonMockup;

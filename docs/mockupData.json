@@ -17,7 +17,7 @@
 		{
 			"_id": { "$oid": "667a71f6e0886aacd10fabdc" },
 			"current_date": 1719300598.5516734,
-			"hex_code": "#000000"
+			"hex_code": "#F00000"
 		}
 	],
 	"Energiekosten": [
