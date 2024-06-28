@@ -20,7 +20,7 @@ export default function Dashboard() {
 	const [mqttData, setMqttData] = useState<string[]>([]); // New state variable
 
 	useEffect(() => {
-		setMqttDataRecieved(readJsonForTesting(JsonMockup));
+		setMqttDataRecieved(handleJson(JsonMockup));
 		setTemperature(getTempTemp());
 		setHumidity(getTempHumidity());
 		setCubeColor(getTempColor());
@@ -35,7 +35,6 @@ export default function Dashboard() {
 
 	return (
 		<>
-			<button onClick={sendTestData}>Test</button>
 			<div className="gridWrapper">
 				<div className="cardGrid">
 					<div className="tempWrapper card">
@@ -77,18 +76,13 @@ export default function Dashboard() {
 					</div>
 					<div className="dataRecieved card">
 						<label htmlFor="data">Cost table</label>
-						<p id="data">{createApiTable(arrOfEneregyCosts)}</p>
-						<button
-							onClick={() => connectMe(setMqttData)}
-							className="connectButton">
-							Test Call
-						</button>
+						<div id="data">{createApiTable(arrOfEneregyCosts)}</div>
 					</div>
 					<div className="dateRecievedHistory card">
 						<label htmlFor="mqttData">MQTT data:</label>
 						<span className="dataHistory mqtt">{mqttDataRecieved}</span>
 						<button onClick={() => sendTestData()} className="connectButton">
-							Connect
+							Reconnect
 						</button>
 					</div>
 				</div>
@@ -110,16 +104,16 @@ function changeCubeColorToHex(hexColor: string): void {
 	const cubeFaces: HTMLCollectionOf<Element> =
 		document.getElementsByClassName("face");
 
-	for (let i = 0; i < cubeFaces.length; i++) {
-		cubeFaces[i].style.backgroundColor = `${hexColor}`;
-	}
+	// for (let i = 0; i < cubeFaces.length; i++) {
+	// 	cubeFaces[i].style.backgroundColor = `${hexColor}`;
+	// }
 }
 
-function randomMqttData() {
-	let data = "MQTT: ";
-	let random = Math.floor(Math.random() * 100);
-	return data + random;
-}
+// function randomMqttData() {
+// 	let data = "MQTT: ";
+// 	let random = Math.floor(Math.random() * 100);
+// 	return data + random;
+// }
 
 // function connectMe(
 // 	setMqttData: React.Dispatch<React.SetStateAction<string[]>>
@@ -137,10 +131,8 @@ function randomMqttData() {
 
 function sendTestData() {
 	let data: JSON = JsonMockup;
-	console.log(data.toString());
 
 	client.publish("jsonTest", JSON.stringify(data));
-	console.log(JsonMockup);
 }
 
 function startMqttConnection(topic: string) {
@@ -151,7 +143,7 @@ function startMqttConnection(topic: string) {
 	client.on("connect", () => {
 		client.subscribe(topic, (err) => {
 			if (!err) {
-				console.log(test);
+				console.error(err);
 			}
 		});
 	});
@@ -162,22 +154,12 @@ function startMqttConnection(topic: string) {
 	});
 }
 
-function handleJson(data) {
-	let jsonData: JSON = JSON.parse(data);
-	getEnergieCosts(jsonData);
-	console.log(jsonData);
-}
-
-function getEnergieCosts(data: JSON) {
-	let costs = data[0];
-	console.log(costs);
-}
 //Change test to offical in startMQTTconnection when presenting
 let official = "FBS/LF8_Projekt/JSON";
 let test = "jsonTest";
 // startMqttConnection(test);
 
-function readJsonForTesting(data: any) {
+function handleJson(data: any) {
 	data = JsonMockup;
 	let humidity;
 	let temperature;
@@ -229,14 +211,19 @@ function readJsonForTesting(data: any) {
 	if (colorArrayFirstElement) {
 		colorResult = getJsonObjectByKey(colorArrayFirstElement, "hex_code");
 	}
-
-	let apiTable = createApiTable(arrOfEneregyCosts);
+	let apiTable;
 
 	setTempTemp(temperatureResult);
 	setTempHumidity(humidityResult);
 	setTempColor(colorResult);
 	setmqData(JsonMockup);
-	setTempCosts(apiTable);
+
+	if (arrOfEneregyCosts.length != 0) {
+		apiTable = createApiTable(arrOfEneregyCosts);
+		setTempCosts(apiTable);
+	} else {
+		setTempCosts(getTempCosts());
+	}
 	return JSON.stringify(data);
 }
 
@@ -251,6 +238,9 @@ function getJsonArrayFirstElement(array: any) {
 }
 
 function getAllCosts(array: any) {
+	if (array.length === 0) {
+		return;
+	}
 	array.forEach((element: string) => {
 		let startTimeDate;
 		let endTimeDate;
@@ -264,7 +254,7 @@ function getAllCosts(array: any) {
 			endTime = getJsonObjectByKey(endTimeDate, "$date");
 			costs = getJsonObjectByKey(element, "Marketprice");
 		} catch (error) {
-			console.log("Error in parsing JSON");
+			console.error("Error in parsing JSON");
 		}
 		arrOfEneregyCosts.push(startTime);
 		arrOfEneregyCosts.push(endTime);
@@ -286,8 +276,6 @@ function setTempTemp(temp: number) {
 }
 
 function getTempTemp() {
-	console.log(tempTemp);
-
 	return tempTemp;
 }
 
@@ -325,7 +313,7 @@ function getTempCosts() {
 
 function createApiTable(array: any) {
 	return (
-		<table>
+		<table className="apiTable">
 			<thead>
 				<tr>
 					<th>Start</th>

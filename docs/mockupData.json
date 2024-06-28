@@ -3,21 +3,21 @@
 		{
 			"_id": { "$oid": "667a71f6e0886aacd10fabda" },
 			"current_date": 1719300598.5516734,
-			"humidity": 55.1
+			"humidity": 10
 		}
 	],
 	"Temperatur": [
 		{
 			"_id": { "$oid": "667a71f6e0886aacd10fabdb" },
 			"current_date": 1719300598.5516734,
-			"temperature": 20.1
+			"temperature": 25
 		}
 	],
 	"Farbwerte": [
 		{
 			"_id": { "$oid": "667a71f6e0886aacd10fabdc" },
 			"current_date": 1719300598.5516734,
-			"hex_code": "#34ffff"
+			"hex_code": "#000000"
 		}
 	],
 	"Energiekosten": [
