@@ -1,26 +1,35 @@
 {
-  "name": "dobo-frontend",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.3"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3"
-  }
+	"name": "dobo-frontend",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@progress/kendo-react-gauges": "^8.0.0",
+		"chart": "^0.1.2",
+		"chart.js": "2.9.3",
+		"lodash": "^4.17.21",
+		"mqtt": "^4.3.8",
+		"next": "14.2.3",
+		"react": "^18",
+		"react-dom": "^18",
+		"react-gauge-chart": "^0.5.1",
+		"react-webcam": "^7.2.0"
+	},
+	"devDependencies": {
+		"@types/chart.js": "^2.9.41",
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"@types/react-gauge-chart": "^0.4.3",
+		"eslint": "^8",
+		"eslint-config-next": "14.2.3",
+		"postcss": "^8",
+		"tailwindcss": "^3.4.1",
+		"typescript": "^5"
+	}
 }
