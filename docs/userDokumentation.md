@@ -29,12 +29,12 @@ Diese Dokumentation soll Ihnen helfen, das System erfolgreich zu bedienen und m�
     [VOM ADMINISTRATOR ZU ERGÄNZEN]
 - Ich sehe auf einmal vier komische Knöpfe anstatt mein Dashboard?
   - Drücken sie auf den Knopf Dashboard um in die gewohnte Ansicht zurück zu kehren
-    [BILD]
+  - ![home view](image-2.png)
 - Verändern sich die Anzeigen auf der Seite nicht?
   - Drücken sie den Grünen Reconnect Knopf unten rechts
-    [BILD]
+  - ![alt text](image-6.png)
 - Ich bekomme innerhalb einer Minute immernoch keine Daten?
   - Öffnen sie die Konsole mit F12. Sollten dort etwas rotes zu sehen sein melden sie sich bitte bei ihrem Administrator
-    [BILD]
+  - ![alt text](image-7.png)
 - Funktionieren die Server und CLient Verbindungen nicht?
   - Stellen sie sicher das sie sich im selben Netzwerk befinden und die IP-Adresse aktualisieren

@@ -60,15 +60,20 @@ Klonen sie sich die Projekte auf ein Lokales Gerät:
   - https://nodejs.org/en
 - Öffnen sie ein Terminal ihrer Wahl und navigieren sie zu der Directory in der sie den Frontend Ordner hinterlegt haben.
 - Installieren sie die benötigten packages via dem command npm i.
+  - ![terminal install](image.png)
 - Starten sie den Server via npm run dev.
-  [BILD]
+  - ![terminal run project](image-1.png)
 - Öffnen sie die localhost Adresse in ihrem preffererierten Browser.
-  [BILD]
+  - ![home view](image-2.png)
 - Navigieren sie zum Dashboard um aktuelle Daten zu Empfangen.
+  - ![Dashboard](image-3.png)
 
 ##### Server
 
+- Erstellen sie einen Next Build Ordner mit npm run build
+  - ![terminal build](image-4.png)
 - Kopieren sie die Dateien aus dem Build Ordner in die Directory ihres Webservers.
+  - ![.next](image-5.png)
 - Navigieren sie zu Dashobard um aktuelle Daten zu Empfangen.
 
 ## Funktion
