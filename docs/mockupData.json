@@ -10,7 +10,7 @@
 		{
 			"_id": { "$oid": "667a71f6e0886aacd10fabdb" },
 			"current_date": 1719300598.5516734,
-			"temperature": 25
+			"temperature": 5
 		}
 	],
 	"Farbwerte": [
